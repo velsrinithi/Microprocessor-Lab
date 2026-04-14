@@ -1,1 +1,86 @@
+#1.sorting of 16 -bit numbers in array
+          OUTPUT 2500AD
+.ORG 2000H
+DATA SEGMENT
+ARRAY DW 0005H,0003H,0002H,0001H,0004H
+COUNT DW 0005H
+DATA ENDS
+CODE SEGMENT
+        ASSUME CS:CODE,DS:DATA
+        MOV AX,DATA
+        MOV DS,AX
+        MOV DX,COUNT
+        DEC DX
+L2:
+        MOV CX,DX
+        MOV SI,OFFSET ARRAY
+L1:
+        MOV AX,[SI]
+        CMP AX,2[SI]
+        JBE L3
+        XCHG AX,2[SI]
+        XCHG AX,[SI]
+L3:
+        INC SI
+        INC SI
+        LOOP L1
+        DEC DX
+        JNZ L2
+        HLT
+CODE ENDS
+END
+#2.searching a number in an array
+      OUTPUT 2500AD
+.ORG 2000H
+DATA SEGMENT
+ARRAY DW 0000H,0002H,0004H,0006H,0008H
+COUNT DB 05H
+KEY   DW 0005H
+RES   DB 00H
+DATA ENDS
+CODE SEGMENT
+    ASSUME CS:CODE, DS:DATA
+    MOV AX,DATA
+    MOV DS,AX
+    MOV AX,KEY
+    MOV CL,COUNT
+    LEA SI,ARRAY
+    MOV BL,00H
+L2:
+    CMP AX,[SI]
+    JNZ L1
+    INC BL
+L1:
+    ADD SI,2
+    LOOP L2
+    MOV RES,BL
+    HLT
+CODE ENDS
+END
+#3.sum of n 8-bit numbers
+                OUTPUT 2500AD
+.ORG 2000H
+DATA SEGMENT
+NUMBERS DB 1H,2H,3H,4H,5H,6H,7H,8H,9H,10H
+COUNT DB 0AH
+SUM DW 0000H
+DATA ENDS
+CODE SEGMENT
+        ASSUME CS:CODE,DS:DATA
+        MOV AX,DATA
+        MOV DS,AX
+        LEA SI,NUMBERS
+        MOV CX,COUNT
+        MOV AX,SUM
+L1:
+        ADD AL,[SI]
+        ADC AH,00H
+        INC SI
+        LOOP L1
+        MOV SUM,AX
+        HLT
+CODE ENDS
+END
+
+
 
