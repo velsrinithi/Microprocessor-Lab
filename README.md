@@ -1,41 +1,65 @@
-# Microprocessor Lab Programs
-Assembly programs for 8086,8051,and interfacing using 8253 and 8255
+# Microprocessor Lab Experiments (8086 & 8051)
 
-This repository contains assembly language programs developed as part of my Microprocessor and Microcontroller Lab.
+##  Overview
+This repository contains Microprocessor (8086) and Microcontroller (8051) lab programs including interfacing experiments and arithmetic operations as part of academic coursework.
 
-#Platforms Covered
+---
 
-* 8086 Microprocessor
-* 8051 Microcontroller
-* 8255 Programmable Peripheral Interface
-* 8253 Programmable Interval Timer
+##  Contents
 
-#Programs Included
+### 🔷 8086 Microprocessor Experiments
+- Stepper Motor Interfacing
+- ADC and DAC Interfacing (Waveform Generation)
+- 8253 Timer Interfacing (Mode 0, 2, 3)
 
-*Arithmetic and logical operations
-*Data transfer and memory operations
-*Looping and control instructions
-*Sorting and searching algorithms
-*String manipulation programs
-*Delay generation and timing programs
-*Interfacing with peripherals (ADC, DAC, stepper motor, seven segment display)
-*Interrupt handling and system-level programs
+---
 
-#Structure
+### 🔷 8051 Microcontroller Programs
+- Addition of two numbers
+- Subtraction of two numbers
+- Multiplication
+- Division
+- Expression: (A² + B²) / (A + B)
 
-The repository is organized based on processor and experiment type.
-Each exercise includes:
+---
 
-* Assembly program (.asm)
-* Explanation of logic
+## 🧠 Concepts Used
+- 8086 Assembly Language Programming
+- 8051 Instruction Set
+- 8255 Programmable Peripheral Interface
+- 8253 Programmable Interval Timer
+- ADC and DAC interfacing
+- Stepper motor control
+- I/O port programming (IN/OUT, MOVX)
+- Delay loops and lookup tables
+- Arithmetic and logical operations
 
-#Tools Used
+---
 
-* 8086 Simulator / EMU8086
-* 8051 Simulator
-* GNUSim8085 (for basic reference)
+## 🔌 Tools Used
+- EMU8086 Microprocessor Simulator
+- Keil uVision (8051 Programming)
+- Proteus (optional simulation)
+- 8086 Trainer Kit
+- 8051 Development Board
+- 8255 & 8253 Interfacing Modules
 
- #Author
+---
 
-V. Vel Srinithi
-B.E. Computer Science and Engineering
+##  Learning Outcomes
+- Understanding 8086 and 8051 architectures
+- Interfacing external devices using 8255 and 8253
+- Generating waveforms using DAC
+- Controlling stepper motor using assembly language
+- Implementing arithmetic algorithms in microcontroller
+- Practical understanding of embedded system concepts
+
+---
+
+## 👨‍💻 Author
+V.Vel srinithi
+
+---
+
+##  Note
+This repository is created for academic laboratory record and learning purposes.
