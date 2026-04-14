@@ -1,4 +1,4 @@
-# Experiment 5: Seven Segment Display Interfacing (8086)
+# Experiment : Seven Segment Display Interfacing (8086)
 
 ##  Aim
 
