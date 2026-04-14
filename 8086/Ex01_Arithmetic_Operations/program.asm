@@ -44,7 +44,7 @@ L1:             MOV DIFF,AX
                 MOV BR,CL
 CODE ENDS
 END
-#3.Subtraction of two 16 bit numbers
+#3.Multiplication of two 16 bit numbers
                 OUTPUT 2500AD
 .ORG 2000H
 DATA SEGMENT
