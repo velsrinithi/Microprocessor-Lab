@@ -1,1 +1,80 @@
+#1.Displays digits (0–F) sequentially
+        OUTPUT 2500AD
+.ORG 2000H
+DATA SEGMENT
+LIST DB 3FH,06H,5BH,4FH,66H,6DH,7DH,07H,7FH,6FH,77H,7FH,39H,5EH,79H,71H
+COUNT DB 10H
+DATA ENDS
+CODE SEGMENT
+        ASSUME CS:CODE,DS:DATA
+START:
+        MOV AX,DATA
+        MOV DS,AX
+        MOV AL,80H
+        MOV DX,FFE6H
+        OUT DX,AL
+REPEAT:
+        MOV SI,OFFSET LIST
+        MOV CL,COUNT
+L1:
+        MOV AL,[SI]
+        MOV DX,FFE0H
+        OUT DX,AL
+        CALL DELAY
+        INC SI
+        DEC CL
+        JNZ L1
+        JMP REPEAT
+DELAY:
+        MOV AH,15H
+L3:
+        MOV BX,AAAAH
+L2:
+        DEC BX
+        JNZ L2
+        DEC AL
+        JNZ L3
+        RET
+CODE ENDS
+END
+#2. HELLO USING TWO SEVEN SEGMENTS
+
+                OUTPUT 2500AD
+.ORG 2000H
+DATA SEGMENT
+    LIST1: DB 76H, 38H, 3FH
+    LIST2: DB 79H, 38H, 3FH
+DATA ENDS
+CODE SEGMENT
+    ASSUME CS:CODE, DS:DATA
+START:
+    MOV AX, DATA
+    MOV DS, AX
+    MOV AL, 80H
+    MOV DX, FFE6H
+    OUT DX, AL
+REPEAT:
+    MOV SI, OFFSET LIST1
+    LEA DI, LIST2
+    MOV CH, 03H
+L1:
+    MOV AL, [SI]
+    MOV DX, FFE0H
+    OUT DX, AL
+    MOV AL, [DI]
+    MOV DX, FFE2H
+    OUT DX, AL
+    CALL DELAY
+    INC SI
+    INC DI
+    DEC CH
+    JNZ L1
+    JMP REPEAT
+DELAY:
+    MOV BX, FFFFH
+L2: DEC BX
+    JNZ L2
+    RET
+CODE ENDS
+END
 
